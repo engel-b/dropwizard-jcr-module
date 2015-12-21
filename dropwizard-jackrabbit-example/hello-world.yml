@@ -1,0 +1,18 @@
+
+server:
+  type: default
+  rootPath: '/api/*'
+  applicationContextPath: /
+  applicationConnectors:
+    - type: http
+      port: 8082
+
+repository:
+  homeDir: jackrabbit
+  config: repository.xml
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: DEBUG

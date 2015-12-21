@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+<parent>
+	<groupId>com.github.justcoke</groupId>
+	<artifactId>dropwizard-jcr-parent</artifactId>
+	<version>0.2.0-SNAPSHOT</version>
+</parent>
+
+	<artifactId>dropwizard-jcr</artifactId>
+
+	<name>Dropwizard JCR support</name>
+	<properties>
+		<javax.jcr.version>2.0</javax.jcr.version>
+		<javax.javaee-api.version>7.0</javax.javaee-api.version>
+		<apache.commons.io.version>2.2</apache.commons.io.version>
+		<apache.commons.codec.version>1.5</apache.commons.codec.version>
+		<apache.jackrabbit.version>2.8.0</apache.jackrabbit.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.dropwizard</groupId>
+			<artifactId>dropwizard-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${javax.javaee-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.jcr</groupId>
+			<artifactId>jcr</artifactId>
+			<version>${javax.jcr.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${apache.commons.io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${apache.commons.codec.version}</version>
+		</dependency>
+	</dependencies>
+</project>

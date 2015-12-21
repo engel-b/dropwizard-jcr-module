@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.justcoke</groupId>
+		<artifactId>dropwizard-jcr-parent</artifactId>
+		<version>0.2.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>dropwizard-jackrabbit</artifactId>
+	<name>Dropwizard Jackrabbit</name>
+	<description>Jackrabbit specific classes</description>
+
+	<properties>
+		<!-- Apache Library Version -->
+		<apache.jackrabbit.version>2.10.1</apache.jackrabbit.version>
+
+		<!-- Common Libraries Versions -->
+		<logging.slf4j.version>1.7.6</logging.slf4j.version>
+		<logging.log4j.version>2.0-rc1</logging.log4j.version>
+
+		<!-- Derby -->
+        <derby.version>10.11.1.1</derby.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Apache Jackrabbit -->
+			<dependency>
+				<groupId>org.apache.jackrabbit</groupId>
+				<artifactId>jackrabbit-core</artifactId>
+				<version>${apache.jackrabbit.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-io</groupId>
+						<artifactId>commons-io</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>org.slf4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>jcl-over-slf4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.derby</groupId>
+				<artifactId>derby</artifactId>
+				<version>${derby.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.jcr</groupId>
+			<artifactId>jcr</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+		<!-- JCR stereotypes -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>dropwizard-jcr</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- Jackrabbit -->
+		<dependency>
+			<groupId>org.apache.jackrabbit</groupId>
+			<artifactId>jackrabbit-core</artifactId>
+		</dependency>
+		<!-- slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Derby -->
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+		</dependency>
+	</dependencies>
+</project>

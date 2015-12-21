@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<prerequisites>
+		<maven>3.0.1</maven>
+	</prerequisites>
+
+	<groupId>com.github.justcoke</groupId>
+	<artifactId>dropwizard-jcr-parent</artifactId>
+	<version>0.2.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>JCR Support 4 Dropwizard Project</name>
+	<url>${project.url}</url>
+	<description />
+	<inceptionYear>2015</inceptionYear>
+
+	<modules>
+		<module>dropwizard-jcr</module>
+		<module>dropwizard-jackrabbit</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.url>http://github.com/justcoke/dropwizard-jcr</project.url>
+
+		<junit.version>4.12</junit.version>
+		<assertj.version>3.2.0</assertj.version>
+		<mockito.version>1.10.19</mockito.version>
+
+		<dropwizard.version>0.9.0</dropwizard.version>
+
+		<!-- Guice -->
+		<dropwizard.guice.version>0.8.4.0</dropwizard.guice.version>
+		<guice.version>4.0</guice.version>
+
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<developers>
+		<developer>
+			<name>Björn Engel</name>
+			<url>http://about.me/bjoernengel</url>
+			<timezone>Europe/Berlin</timezone>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>Apache 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<developerConnection>scm:git:git@github.com:justcoke/dropwizard-jcr.git</developerConnection>
+		<connection>scm:git:https://github.com/justcoke/dropwizard-jcr.git</connection>
+		<url>https://github.com/justcoke/dropwizard-jcr.git</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<!-- configure Maven to deploy to the OSSRH Nexus server with the Nexus 
+		Staging Maven plugin -->
+	<distributionManagement>
+		<!-- the Maven deploy plugin needs a full distributionManagement section -->
+		<snapshotRepository>
+			<id>ossrh-snapshot</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh-release</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<!-- The above configurations will get the user account details to deploy 
+			to OSSRH from Maven settings.xml file. -->
+	</distributionManagement>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.dropwizard</groupId>
+				<artifactId>dropwizard-bom</artifactId>
+				<version>${dropwizard.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.hubspot.dropwizard</groupId>
+				<artifactId>dropwizard-guice</artifactId>
+				<version>${dropwizard.guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.inject</groupId>
+				<artifactId>guice</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>${mockito.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>${assertj.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.hamcrest</groupId>
+					<artifactId>hamcrest-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<releaseProfiles>release</releaseProfiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9.1</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<additionalparam>-Xdoclint:none</additionalparam>
+									<show>public</show>
+									<quiet>true</quiet>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+<!-- 					<plugin> -->
+<!-- 						<groupId>org.sonatype.plugins</groupId> -->
+<!-- 						<artifactId>nexus-staging-maven-plugin</artifactId> -->
+<!-- 						<version>1.6.6</version> -->
+<!-- 						<extensions>true</extensions> -->
+<!-- 						<configuration> -->
+<!-- 							<serverId>ossrh-release</serverId> -->
+<!-- 							<nexusUrl>https://oss.sonatype.org/</nexusUrl> -->
+<!-- 							<autoReleaseAfterClose>true</autoReleaseAfterClose> -->
+<!-- 						</configuration> -->
+<!-- 					</plugin> -->
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
