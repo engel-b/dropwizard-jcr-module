@@ -7,7 +7,7 @@
 
 	<groupId>com.github.justcoke</groupId>
 	<artifactId>dropwizard-jcr-parent</artifactId>
-	<version>0.2.2-SNAPSHOT</version>
+	<version>0.2.2</version>
 	<packaging>pom</packaging>
 
 	<name>JCR Support 4 Dropwizard Project</name>
