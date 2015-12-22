@@ -7,7 +7,7 @@
 
 	<groupId>com.github.justcoke</groupId>
 	<artifactId>dropwizard-jcr-parent</artifactId>
-	<version>0.2.2-SNAPSHOT</version>
+	<version>0.2.2</version>
 	<packaging>pom</packaging>
 
 	<name>JCR Support 4 Dropwizard Project</name>
@@ -59,6 +59,7 @@
 		<developerConnection>scm:git:git@github.com:justcoke/dropwizard-jcr.git</developerConnection>
 		<connection>scm:git:https://github.com/justcoke/dropwizard-jcr.git</connection>
 		<url>https://github.com/justcoke/dropwizard-jcr.git</url>
+    <tag>dropwizard-jcr-parent-0.2.2</tag>
   </scm>
 
 	<!-- configure Maven to deploy to the OSSRH Nexus server with the Nexus 
