@@ -7,7 +7,7 @@
 
 	<groupId>com.github.justcoke</groupId>
 	<artifactId>dropwizard-jcr-parent</artifactId>
-	<version>0.2.1</version>
+	<version>0.2.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>JCR Support 4 Dropwizard Project</name>
@@ -59,21 +59,22 @@
 		<developerConnection>scm:git:git@github.com:justcoke/dropwizard-jcr.git</developerConnection>
 		<connection>scm:git:https://github.com/justcoke/dropwizard-jcr.git</connection>
 		<url>https://github.com/justcoke/dropwizard-jcr.git</url>
-	  <tag>dropwizard-jcr-parent-0.2.1</tag>
   </scm>
 
 	<!-- configure Maven to deploy to the OSSRH Nexus server with the Nexus 
 		Staging Maven plugin -->
 	<distributionManagement>
 		<!-- the Maven deploy plugin needs a full distributionManagement section -->
-		<snapshotRepository>
-			<id>ossrh-snapshot</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
 		<repository>
 			<id>ossrh-release</id>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<uniqueVersion>true</uniqueVersion>
 		</repository>
+		<snapshotRepository>
+			<id>ossrh-snapshot</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
 		<!-- The above configurations will get the user account details to deploy 
 			to OSSRH from Maven settings.xml file. -->
 	</distributionManagement>
@@ -150,9 +151,7 @@
 				<version>2.5.3</version>
 				<configuration>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
-					<useReleaseProfile>false</useReleaseProfile>
 					<releaseProfiles>release</releaseProfiles>
-					<goal>deploy</goal>
 				</configuration>
 			</plugin>
 		</plugins>
