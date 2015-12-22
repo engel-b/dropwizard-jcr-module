@@ -5,12 +5,12 @@
 <parent>
 	<groupId>com.github.justcoke</groupId>
 	<artifactId>dropwizard-jcr-parent</artifactId>
-	<version>0.2.2</version>
+	<version>0.2.3-SNAPSHOT</version>
 </parent>
 
 	<artifactId>dropwizard-jcr</artifactId>
-
 	<name>Dropwizard JCR support</name>
+	<description>Addon bundle for Dropwizard to support JCR</description>
 	<properties>
 		<javax.jcr.version>2.0</javax.jcr.version>
 		<javax.javaee-api.version>7.0</javax.javaee-api.version>

@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>com.github.justcoke</groupId>
 		<artifactId>dropwizard-jcr-parent</artifactId>
-		<version>0.2.2</version>
+		<version>0.2.3-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>dropwizard-jackrabbit</artifactId>
 	<name>Dropwizard Jackrabbit</name>
-	<description>Jackrabbit specific classes</description>
+	<description>Addon bundle for Dropwizard to support JCR reference implementation Jackrabbit</description>
 
 	<properties>
 		<!-- Apache Library Version -->

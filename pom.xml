@@ -7,12 +7,12 @@
 
 	<groupId>com.github.justcoke</groupId>
 	<artifactId>dropwizard-jcr-parent</artifactId>
-	<version>0.2.2</version>
+	<version>0.2.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>JCR Support 4 Dropwizard Project</name>
 	<url>${project.url}</url>
-	<description />
+	<description>Parent bundle for Dropwizard to support Java Content Repository</description>
 	<inceptionYear>2015</inceptionYear>
 
 	<modules>
