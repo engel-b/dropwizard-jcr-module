@@ -9,7 +9,7 @@
 	    <groupId>com.github.justcoke</groupId>
 		<artifactId>dropwizard-jcr-parent</artifactId>
 <<<<<<< HEAD
-		<version>0.2.0</version>
+		<version>0.2.2</version>
 =======
 		<version>0.1.2</version>
 >>>>>>> refs/remotes/origin/master

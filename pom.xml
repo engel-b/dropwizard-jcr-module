@@ -59,6 +59,7 @@
 		<developerConnection>scm:git:git@github.com:justcoke/dropwizard-jcr.git</developerConnection>
 		<connection>scm:git:https://github.com/justcoke/dropwizard-jcr.git</connection>
 		<url>https://github.com/justcoke/dropwizard-jcr.git</url>
+    <tag>dropwizard-jcr-parent-0.2.2</tag>
   </scm>
 
 	<!-- configure Maven to deploy to the OSSRH Nexus server with the Nexus 
