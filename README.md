@@ -7,8 +7,6 @@ The set contains:
 * dropwizard-jackrabbit-example - a basic example dropwizard app that uses the dropwizard
 
 
-:heavy_exclamation_mark: Note: dropwizard-jcr is not listed in maven central yet. I`ll try my very best, but this all is new to me...
-
 # Usage
 This module assumes you are including it in a Dropwizard 0.9.0 application with dropwizard-guice wiring.
 
