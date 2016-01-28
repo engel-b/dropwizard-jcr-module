@@ -1,4 +1,4 @@
-# JCR support 4 dropwizard
+# JCR support 4 dropwizard [![Build Status](https://travis-ci.org/justcoke/dropwizard-jcr.svg)](https://travis-ci.org/justcoke/dropwizard-jcr)
 A set of modules for connecting a Dropwizard app to a **J**ava **C**ontent **R**epository
 
 The set contains:
