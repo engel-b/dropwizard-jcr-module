@@ -1,4 +1,10 @@
-# JCR support 4 dropwizard [![Build Status](https://travis-ci.org/justcoke/dropwizard-jcr.svg)](https://travis-ci.org/justcoke/dropwizard-jcr)
+# JCR support 4 dropwizard 
+Travis (Linux & MacOS build): [![][travis img]][travis]
+Appveyor (Windows build): [![][appveyor img]][appveyor]
+
+[![][mavenbadge img]][mavenbadge]
+
+[![Build Status](https://travis-ci.org/justcoke/dropwizard-jcr.svg)](https://travis-ci.org/justcoke/dropwizard-jcr)
 A set of modules for connecting a Dropwizard app to a **J**ava **C**ontent **R**epository
 
 The set contains:
@@ -96,3 +102,12 @@ import com.hubspot.dropwizard.guice.GuiceBundle;
 ```
 
 Also have look at the dropwizard-jackrabbit-example.
+
+[travis]:https://travis-ci.org/justcoke/dropwizard-jcr/builds
+[travis img]:https://secure.travis-ci.org/justcoke/dropwizard-jcr.png
+
+[appveyor]:https://ci.appveyor.com/project/justcoke/dropwizard-jcr/history
+[appveyor img]:https://ci.appveyor.com/api/projects/status/rw6bw3dl9kph6ucc?svg=true
+
+[mavenbadge]:http://search.maven.org/#search|gav|1|g%3A%22com.github.justcoke%22%20AND%20a%3A%22dropwizard-jcr%22
+[mavenbadge img]:https://maven-badges.herokuapp.com/maven-central/com.github.justcoke/dropwizard-jcr/badge.svg
