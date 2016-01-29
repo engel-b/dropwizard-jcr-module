@@ -1,10 +1,9 @@
 # JCR support 4 dropwizard 
-Travis (Linux & MacOS build): [![][travis img]][travis]
+Travis (Linux & MacOS build): [![][travis img]][travis]<br/>
 Appveyor (Windows build): [![][appveyor img]][appveyor]
 
-[![][mavenbadge img]][mavenbadge]
+MavenCentral: [![][mavenbadge img]][mavenbadge]
 
-[![Build Status](https://travis-ci.org/justcoke/dropwizard-jcr.svg)](https://travis-ci.org/justcoke/dropwizard-jcr)
 A set of modules for connecting a Dropwizard app to a **J**ava **C**ontent **R**epository
 
 The set contains:
