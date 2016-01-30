@@ -1,7 +1,8 @@
 # JCR support 4 dropwizard 
 [![Travis (Linux & MacOS build)](https://secure.travis-ci.org/justcoke/dropwizard-jcr.png)](https://travis-ci.org/justcoke/dropwizard-jcr/builds) 
-[![Appveyor (Windows build)](https://ci.appveyor.com/api/projects/status/xbuvgopec9govbfb?svg=true)](https://ci.appveyor.com/project/justcoke/dropwizard-jcr/history)
-[![MavenCentral](https://maven-badges.herokuapp.com/maven-central/com.github.justcoke/dropwizard-jcr/badge.svg)](http://search.maven.org/#search|gav|1|g%3A%22com.github.justcoke%22%20AND%20a%3A%22dropwizard-jcr%22)
+[![Appveyor (Windows build)](https://ci.appveyor.com/api/projects/status/xbuvgopec9govbfb?svg=true)](https://ci.appveyor.com/project/justcoke/dropwizard-jcr/history) 
+[![MavenCentral](https://maven-badges.herokuapp.com/maven-central/com.github.justcoke/dropwizard-jcr/badge.svg)](http://search.maven.org/#search|gav|1|g%3A%22com.github.justcoke%22%20AND%20a%3A%22dropwizard-jcr%22) 
+[![VersionEye](https://www.versioneye.com/user/projects/56abe0c07e03c7003ba40dc4/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56abe0c07e03c7003ba40dc4)
 
 A set of modules for connecting a Dropwizard app to a **J**ava **C**ontent **R**epository
 
