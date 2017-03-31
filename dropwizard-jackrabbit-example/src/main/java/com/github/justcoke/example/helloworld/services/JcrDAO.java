@@ -4,7 +4,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.jcr.Binary;
 import javax.jcr.LoginException;
 import javax.jcr.Node;
@@ -18,12 +17,12 @@ import javax.jcr.ValueFactory;
 import org.apache.commons.io.IOUtils;
 import org.apache.jackrabbit.value.ValueFactoryImpl;
 
-public class Warehouse {
+public class JcrDAO {
 
 	private Repository repository;
 
 	@Inject
-	public Warehouse(@Named("jcr") Repository repository) {
+	public JcrDAO(Repository repository) {
 		this.repository = repository;
 	}
 

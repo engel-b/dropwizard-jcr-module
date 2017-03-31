@@ -1,4 +1,3 @@
-
 server:
   type: default
   rootPath: '/api/*'
@@ -9,7 +8,7 @@ server:
 
 repository:
   homeDir: jackrabbit
-  config: repository.xml
+  repositoryXml: repository.xml
 
 # Logging settings.
 logging:

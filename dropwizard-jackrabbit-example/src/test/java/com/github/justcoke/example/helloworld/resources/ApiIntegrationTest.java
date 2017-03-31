@@ -7,14 +7,12 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Response;
 
-import org.junit.After;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 
 import com.github.justcoke.example.helloworld.HelloWorldApplication;
 import com.github.justcoke.example.helloworld.HelloWorldConfiguration;
-import com.squarespace.jersey2.guice.BootstrapUtils;
 
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit.DropwizardAppRule;
@@ -23,11 +21,6 @@ public class ApiIntegrationTest {
 	@Rule
 	public final DropwizardAppRule<HelloWorldConfiguration> RULE = new DropwizardAppRule<>(HelloWorldApplication.class,
 			ResourceHelpers.resourceFilePath("integration-test.yml"));
-
-	@After
-	public void resetGuice() {
-		BootstrapUtils.reset();
-	}
 
 	@Test
 	@Ignore

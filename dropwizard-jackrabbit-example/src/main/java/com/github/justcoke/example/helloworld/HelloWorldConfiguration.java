@@ -1,20 +1,29 @@
 package com.github.justcoke.example.helloworld;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.github.justcoke.dropwizard.jackrabbit.JackrabbitRepositoryFactory;
+import com.github.justcoke.dropwizard.jackrabbit.JackrabbitConfiguration;
 
 import io.dropwizard.Configuration;
 
 public class HelloWorldConfiguration extends Configuration {
-	@Valid
-	@NotNull
-	@JsonProperty
-	private JackrabbitRepositoryFactory repository = new JackrabbitRepositoryFactory();
+	  @JsonProperty
+	  protected JackrabbitConfiguration repository;
 
-	public JackrabbitRepositoryFactory getRepository() {
-		return repository;
-	}
+	  public JackrabbitConfiguration getRepository() {
+	    return repository;
+	  }
+
+//	@Valid
+//	@NotNull
+//	@JsonProperty
+//	private JackrabbitRepositoryFactory repository = new JackrabbitRepositoryFactory();
+//
+//    @JsonProperty("repository")
+//	public JackrabbitRepositoryFactory getRepository() {
+//		return repository;
+//	}
+//    @JsonProperty("repository")
+//    public void setRepository(JackrabbitRepositoryFactory factory) {
+//		this.repository = factory;
+//	}
 }

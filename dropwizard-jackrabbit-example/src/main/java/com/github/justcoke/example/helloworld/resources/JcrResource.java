@@ -14,16 +14,16 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.commons.io.IOUtils;
 
-import com.github.justcoke.example.helloworld.services.Warehouse;
+import com.github.justcoke.example.helloworld.services.JcrDAO;
 
 @Path("/jcr")
 public class JcrResource {
 
-	private final Warehouse warehouse;
+	private final JcrDAO jcrDao;
 
 	@Inject
-	public JcrResource(Warehouse warehouse) {
-		this.warehouse = warehouse;
+	public JcrResource(JcrDAO jcrDao) {
+		this.jcrDao = jcrDao;
 	}
 
 	@GET
@@ -32,7 +32,7 @@ public class JcrResource {
 	public byte[] getContent(@PathParam("var") final String path) {
 		byte[] ret = null;
 		try {
-			ret = warehouse.fetch(path);
+			ret = jcrDao.fetch(path);
 		} catch (Exception e) {
 			// TODO implement and register javax.ws.rs.ext.ExceptionMapper
 			throw new WebApplicationException(Status.INTERNAL_SERVER_ERROR);
@@ -53,7 +53,7 @@ public class JcrResource {
 												 * httpHeaders
 												 */, @Context final HttpServletRequest request) {
 		try {
-			warehouse.store(path, IOUtils.toByteArray(request.getInputStream()));
+			jcrDao.store(path, IOUtils.toByteArray(request.getInputStream()));
 		} catch (Exception e) {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).build();
 		}

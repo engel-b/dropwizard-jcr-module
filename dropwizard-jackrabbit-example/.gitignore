@@ -2,3 +2,5 @@
 /.settings/
 /.classpath
 /.project
+/jackrabbit/
+/derby.log

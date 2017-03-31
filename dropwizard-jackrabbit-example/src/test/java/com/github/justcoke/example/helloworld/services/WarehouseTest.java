@@ -10,22 +10,22 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import com.github.justcoke.example.helloworld.services.Warehouse;
+import com.github.justcoke.example.helloworld.services.JcrDAO;
 
 public class WarehouseTest {
 	@Mock
 	Repository repository;
 
-	Warehouse warehouse;
+	JcrDAO warehouse;
 
 	@Test(expected = RepositoryException.class)
 	public void fetchRepositoryNull() throws LoginException, RepositoryException, IOException {
-		warehouse = new Warehouse(null);
+		warehouse = new JcrDAO(null);
 		warehouse.fetch("");
 	}
 
 	@Before
 	public void setup() {
-		warehouse = new Warehouse(repository);
+		warehouse = new JcrDAO(repository);
 	}
 }

@@ -3,7 +3,6 @@ dropwizard-jackrabbit-example
 
 This is an example of using Dropwizard with:
 
- * Google Guice (4.0)
  * Static Resources 
  * Jackrabbit
 
